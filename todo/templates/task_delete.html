@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="delete-container">
+    <p>quer apagar mesmo ?</p>
+    <h4>"{{task.title}}"</h4>
+    <div class="btn-container">
+        <a href="{% url 'task_list'%}">
+            <button class="btn-cancel">Não</button>
+        </a>
+        <form action="" method='POST'>
+            {%csrf_token%}
+            
+            <button class="btn-delete">Sim</button>
+        </form>
+       
+    </div>
+</div>
+    
+{% endblock content %}
+    
